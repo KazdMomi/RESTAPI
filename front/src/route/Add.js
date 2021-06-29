@@ -22,15 +22,16 @@ class Add extends Component {
             name: this.state.name,
         };
         axios.post(`http://localhost:4000/addWord/`, data)
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+        .then(res => {
+            alert("Succes!");
+        });
     }
 
     render() {
         return (
             <div className="Add">
                 <form className="Form" onSubmit={this.handleSubmit}>
-                    <h2>Write word</h2>
+                    <h2>Add word</h2>
                     <input className="Input" type="text" name="name" id="name" onChange={this.handleChange} />
                     <input className="Submit" type="submit" value="Add word" />
                 </form>

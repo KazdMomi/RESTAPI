@@ -25,15 +25,14 @@ class Count extends Component {
         axios.post(`http://localhost:4000/countWords/`, data)
         .then(res => {
             alert("Count of word "+data.name+" is "+res.data.count);
-        })
-        .catch(err => console.log(err));
+        });
     }
 
     render() {
         return (
             <div className="Count">
                 <form className="Form" onSubmit={this.handleSubmit}>
-                    <h2>Write word</h2>
+                    <h2>Count word</h2>
                     <input className="Input" type="text" name="name" id="name" onChange={this.handleChange} />
                     <input className="Submit" type="submit" value="Count word" />
                 </form>

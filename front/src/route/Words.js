@@ -1,6 +1,8 @@
 import { Component } from "react";
 import axios from "axios";
 
+import "../css/Route.css";
+
 class Words extends Component {
     state = {
         words: []

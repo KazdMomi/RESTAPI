@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Component } from "react";
-import "../Menu.css";
+import "../css/Menu.css";
 
 const Button = styled.button`
   background-color: transparent;
