@@ -18,12 +18,15 @@ class Count extends Component {
     };
 
     handleSubmit(event) {
-        const name = this.state.name;
-        // axios.post(`http://localhost:4000/count`, name)
-        // .this(res => {
-        //     alert(res.number);
-        // })
         event.preventDefault();
+        const data = {
+            name: this.state.name,
+        }
+        axios.post(`http://localhost:4000/countWords/`, data)
+        .then(res => {
+            alert("Count of word "+data.name+" is "+res.data.count);
+        })
+        .catch(err => console.log(err));
     }
 
     render() {

@@ -17,12 +17,15 @@ class Delete extends Component {
     };
 
     handleSubmit(event) {
-        const name = this.state.name;
-        // axios.delete(`http://localhost:4000/add`, name)
-        // .this(res => {
-        //     alert(res.number);
-        // })
         event.preventDefault();
+        console.log(this.state.name);
+        const data = {
+            name: this.state.name,
+        }
+        console.log(data);
+        axios.delete(`http://localhost:4000/deleteWord/`+this.state.name)
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
     }
 
     render() {

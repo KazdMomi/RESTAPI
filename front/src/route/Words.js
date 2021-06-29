@@ -7,18 +7,18 @@ class Words extends Component {
     }
 
     componentDidMount() {
-        // axios.get(`http://localhost:4000/getWords`)
-        // .then(res => {
-        //     const words = res.data;
-        //     this.setState({ words });
-        // });
+        axios.get(`http://localhost:4000/getWords`)
+        .then(res => {
+            const words = res.data;
+            this.setState({ words });
+        });
     }
 
     render() {
         return (
-            <div className="Words">
-                {this.state.words.map(word => (
-                    <h2>{word.name}</h2>
+            <div className="Words" >
+                {this.state.words.map((word,index) => (
+                    <h2 key={index}>{word.name}</h2>
                 ))}
             </div>
         );
